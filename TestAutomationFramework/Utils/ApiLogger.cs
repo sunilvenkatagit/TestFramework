@@ -54,13 +54,13 @@ namespace TestAutomationFramework.Utils
             if (requestHeaders != null && requestHeaders.Count > 0)
                 headersToReport = string.Join("\n", requestHeaders.Select(ele => "  . " + ele.Key + " = " + ele.Value));
             else
-                headersToReport = "     --- No Request Headers ---";
+                headersToReport = "     --- None ---";
 
             // Request Parameters
             if (requestParameters != null && requestParameters.Count > 0)
                 parametersToReport = string.Join("\n", requestParameters.Select(ele => "  . " + ele.Key + " = " + ele.Value));
             else
-                parametersToReport = "     --- No Request Parameters ---";
+                parametersToReport = "     --- None ---";
 
             // Request Body
             if (requestBody != null && !requestBody.GetType().Equals(typeof(string))) // body object is a POCO
@@ -94,7 +94,7 @@ namespace TestAutomationFramework.Utils
             }
             else
             {
-                bodyToReport = "     --- No Request Body ---";
+                bodyToReport = "     --- None ---";
             }
         }
         private static void PrepareApiResponseLogger(RestResponse response, out string headersToReport, out string bodyToReport)
@@ -103,7 +103,7 @@ namespace TestAutomationFramework.Utils
             if (response.Headers.Count > 0)
                 headersToReport = $"{string.Join("\n", response.Headers.Select(ele => "  . " + ele.Name + " = " + ele.Value)) }";
             else
-                headersToReport = "     --- No Response Headers Received ---";
+                headersToReport = "     --- None ---";
 
             // Response Body
             bodyToReport = ConvertStringResponseToPrettyPrint(response.Content);
