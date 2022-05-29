@@ -131,7 +131,7 @@ namespace TestAutomationFramework.Utils
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine($"Failed to convert the below Response Content to a pretty format string. Printing as received.");
+                    Console.WriteLine($"EXCEPTION: Failed to convert the below Response Body to a pretty json format string. Printing as received.\n");
                 }
                 return responseContent;
             }
