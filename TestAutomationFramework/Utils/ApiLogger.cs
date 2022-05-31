@@ -100,7 +100,7 @@ namespace TestAutomationFramework.Utils
         private static void PrepareApiResponseLogger(RestResponse response, out string headersToReport, out string bodyToReport)
         {
             // Response Headers
-            if (response.Headers.Count > 0)
+            if (response.Headers != null)
                 headersToReport = $"{string.Join("\n", response.Headers.Select(ele => "  . " + ele.Name + " = " + ele.Value)) }";
             else
                 headersToReport = "     --- None ---";
